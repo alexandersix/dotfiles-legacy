@@ -367,7 +367,7 @@ nnoremap <leader>ht :lua require("harpoon.term").gotoTerminal(1)<CR>
 lua << EOF
 require'lualine'.setup {
     options = {
-        theme = 'dracula'
+        theme = 'nord'
     }
 }
 EOF

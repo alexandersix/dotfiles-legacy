@@ -4,6 +4,9 @@ call plug#begin('~/.vim/plugged')
 " Plug 'arcticicestudio/nord-vim'
 Plug 'shaunsingh/nord.nvim'
 
+" Dracula colorscheme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 " Night Owl colorscheme
 Plug 'haishanh/night-owl.vim'
 
@@ -44,13 +47,10 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-lua/popup.nvim' " Might not be needed if I can get this working with Telescope (see next line)
 " Plug 'brandoncc/telescope-harpoon.nvim' " - not working
 
-" Airline
+" Lualine
 " - Adds a more detailed statusline at
 "   the bottom of the Vim window
-" - Not in use–default Vim statusline
-"   is working for now. Find the config
-"   at plugins/statusline.vim
-" Plug 'vim-airline/vim-airline'
+ Plug 'nvim-lualine/lualine.nvim'
 
 " Vim Gitgutter
 " - Shows a git diff in the sign column
@@ -342,8 +342,6 @@ nnoremap <leader>ml :Telescope marks<CR>
 lua << EOF
 require'nvim-treesitter.configs'.setup {
     highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = true,
     },
     indent = {
         enable = true,
@@ -365,7 +363,16 @@ nnoremap <leader>h; :lua require("harpoon.ui").nav_file(4)<CR>
 nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>ht :lua require("harpoon.term").gotoTerminal(1)<CR>
 
-"" Which Key Nvim
+"" Lualine
+lua << EOF
+require'lualine'.setup {
+    options = {
+        theme = 'dracula'
+    }
+}
+EOF
+
+" Which Key Nvim
 lua << EOF
     wk.register({
         f = {

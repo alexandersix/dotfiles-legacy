@@ -25,7 +25,6 @@ set scrolloff=8
 set noshowmode
 set completeopt=menuone,noselect
 
-set wildmenu
 set wildmode=longest:full,full
 
 set signcolumn=yes
@@ -33,3 +32,7 @@ set colorcolumn=80
 
 set splitbelow
 set splitright
+
+set clipboard=unnamedplus
+
+set iskeyword-=_

@@ -169,6 +169,38 @@ Plug 'preservim/nerdtree'
 " - Email client run entirely in the command line
 Plug 'soywod/himalaya', {'rtp': 'vim'}
 
+" Sayonara
+" - A more sane way to close windows
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+
+" Surround
+" - Surrounds things with other things
+Plug 'tpope/vim-surround'
+
+" Heritage
+" - Lets you do the following: `:e some/path/that/doesnt/exist.md`
+Plug 'jessarcher/vim-heritage'
+
+" Editorconfig
+" - Allows use of the .editorconfig standard in the Vim editor
+Plug 'editorconfig/editorconfig-vim'
+
+" Pasta
+" - More intelligent pasting
+Plug 'sickill/vim-pasta'
+
+" Markdown Preview
+" - Previews markdown files.
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+" TODO: Add Projectionist for quick swapping between feature and test files
+" (see JessArcher's config for details)
+
+" Visual Star Search
+" - Allows you to use visual mode with Vim's default * functionality
+Plug 'nelstrom/vim-visual-star-search'
+
 call plug#end()
 
 syntax enable
@@ -221,7 +253,6 @@ nnoremap <leader>wh <C-W><C-H>
 nnoremap <leader>wv :vsp<CR>
 nnoremap <leader>wn :sp<CR>
 
-nnoremap <leader>wd :q<CR>
 nnoremap <leader>wq :qall<CR>
 nnoremap <leader>wo <C-W>o
 
@@ -506,3 +537,23 @@ nnoremap <leader>op :NERDTreeToggle<CR>
 "" Himalaya
 let g:himalaya_mailbox_picker = 'telescope'
 let g:himalaya_telescope_preview_enabled = 1
+
+"" Sayonara
+nnoremap <leader>wd :Sayonara<CR>
+
+"" Surround
+" Change surroundings: cs{old}{new}
+" Remove surroundings: ds{surrounding}
+" Add surroundings to word: ysiw{surrounding}
+" Add surroundings to line: yss{surrounding}
+" Add surroundings in visual: S{surrounding}
+
+"" Heritage
+" This lets you select and open a new file/filepath within vim
+map gf :edit <cfile><CR>
+
+"" Editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+"" Pasta
+let g:pasta_disabled_filetypes = ['fugitive']

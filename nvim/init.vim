@@ -165,10 +165,6 @@ Plug 'jiangmiao/auto-pairs'
 " - Adds a project sidebar to view hierarchy of files
 Plug 'preservim/nerdtree'
 
-" Himalaya
-" - Email client run entirely in the command line
-Plug 'soywod/himalaya', {'rtp': 'vim'}
-
 " Sayonara
 " - A more sane way to close windows
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
@@ -533,10 +529,6 @@ let NERDTreeMinimalUI=1
 let g:NERDTreeWinPos = "right"
 
 nnoremap <leader>op :NERDTreeToggle<CR>
-
-"" Himalaya
-let g:himalaya_mailbox_picker = 'telescope'
-let g:himalaya_telescope_preview_enabled = 1
 
 "" Sayonara
 nnoremap <leader>wd :Sayonara<CR>

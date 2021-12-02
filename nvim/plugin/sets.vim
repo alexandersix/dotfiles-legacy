@@ -34,5 +34,3 @@ set splitbelow
 set splitright
 
 set clipboard=unnamedplus
-
-set iskeyword-=_

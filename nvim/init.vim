@@ -5,10 +5,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'shaunsingh/nord.nvim'
 
 " Dracula colorscheme
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Gruvbox colorscheme
+Plug 'morhetz/gruvbox'
 
 " Night Owl colorscheme
-Plug 'haishanh/night-owl.vim'
+" Plug 'haishanh/night-owl.vim'
 
 " Vim Fugitive
 " - Vim-based wrapper around Git commands
@@ -206,7 +209,12 @@ let g:nord_italic_comments = v:true
 let g:nord_underline = v:true
 let g:nord_cursor_line_number_background = v:true
 
-colorscheme nord
+let g:gruvbox_bold = v:true
+let g:gruvbox_italic = v:true
+let g:gruvbox_transparent_bg = v:true
+let g:gruvbox_underline = v:true
+
+colorscheme gruvbox
 
 let mapleader = " "
 
@@ -394,7 +402,7 @@ nnoremap <leader>ht :lua require("harpoon.term").gotoTerminal(1)<CR>
 lua << EOF
 require'lualine'.setup {
     options = {
-        theme = 'nord'
+        theme = 'gruvbox'
     }
 }
 EOF

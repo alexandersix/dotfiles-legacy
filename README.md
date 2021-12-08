@@ -1,8 +1,6 @@
-# Dotfiles
-
 ```text
    _____ _____  __
-  / ___//  _/ |/ /    Alex Six
+  / ___//  _/ |/ /    Alex Six's Dotfiles
   \__ \ / / |   /     https://github.com/alexandersix
  ___/ // / /   |      alexanderhsix (at) gmail (dot) com
 /____/___//_/|_|

@@ -1,3 +1,7 @@
+" CoC (Conquer of Completion)
+" - Support for incremental completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Based (heavily) off of erickpatrick's configuration example which
 " can be found here: https://gist.github.com/erickpatrick/bc11a2a08ce388d751af5718b839ccd1
 if executable('intelephense')

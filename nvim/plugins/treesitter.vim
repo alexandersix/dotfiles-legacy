@@ -12,9 +12,10 @@ function TreesitterSetup()
 lua << EOF
 require'nvim-treesitter.configs'.setup {
     highlight = {
+        enable = true,
     },
     indent = {
-        enable = true,
+        enable = false,
     },
 }
 EOF

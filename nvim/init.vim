@@ -1,4 +1,4 @@
-"    _____ _____  __
+"     _____ _____  __
 "   / ___//  _/ |/ /    Alex Six
 "   \__ \ / / |   /     https://github.com/alexandersix
 "  ___/ // / /   |      alexanderhsix (at) gmail (dot) com

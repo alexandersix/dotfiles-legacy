@@ -12,3 +12,4 @@ let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 
 nnoremap <leader>op :NERDTreeToggle<CR>
+nnoremap <leader>or :NERDTreeRefreshRoot<CR>

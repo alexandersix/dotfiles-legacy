@@ -139,6 +139,7 @@ source ~/.config/nvim/plugins/prettier.vim
 source ~/.config/nvim/plugins/projectionist.vim
 source ~/.config/nvim/plugins/sayonara.vim
 source ~/.config/nvim/plugins/surround.vim
+source ~/.config/nvim/plugins/tmux-navigator.vim
 source ~/.config/nvim/plugins/telescope-tmux.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/treesitter.vim

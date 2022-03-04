@@ -12,7 +12,7 @@ function NeoclipSetup()
 lua << EOF
 require('neoclip').setup({
     history = 1000,
-    enable_persistant_history = true,
+    enable_persistent_history = true,
     db_path = vim.fn.stdpath("data") .. "/databases/neoclip.sqlite3",
     on_paste = {
         set_reg = true,

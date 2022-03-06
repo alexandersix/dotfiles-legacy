@@ -141,6 +141,7 @@ source ~/.config/nvim/plugins/projectionist.vim
 source ~/.config/nvim/plugins/sayonara.vim
 source ~/.config/nvim/plugins/surround.vim
 source ~/.config/nvim/plugins/tmux-navigator.vim
+source ~/.config/nvim/plugins/tabnine.vim
 source ~/.config/nvim/plugins/telescope-tmux.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/treesitter.vim
@@ -173,6 +174,3 @@ augroup END
 
 "" Keymap
 nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
-"
-
-

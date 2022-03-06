@@ -1,9 +1,6 @@
 #!/bin/bash
 
-languages=`echo "golang php laravel javascript typescript vuejs svelte react lua html css" | tr ' ' '\n'`
-coreutils=`echo "xargs rg sed awk ssh tee scp" | tr ' ' '\n'`
-
-selected=`printf "$languages\n$coreutils" | fzf`
+selected=`cat ~/.tmux-cht-languages ~/.tmux-cht-command | fzf`
 
 if [[ -z $selected ]]; then
     exit 0
@@ -11,7 +8,7 @@ fi
 
 read -p "Enter Query: " query
 
-if printf "$languages" | grep -qs $selected; then
+if grep -qs "$selected" ~/.tmux-cht-languages; then
     $query = `echo $query | tr ' ' '+'`
     tmux neww bash -c "echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done"
 else

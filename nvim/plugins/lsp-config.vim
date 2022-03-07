@@ -69,6 +69,22 @@ lsp_installer.on_server_ready(function(server)
         end
     end
 
+    if server.name == "sumneko_lua" then
+        opts.on_attach = function(client, bufnr)
+            general_keybindings(bufnr)
+
+            set.tabstop = 4
+            set.softtabstop = 4
+            set.shiftwidth = 4
+        end
+    end
+
+    if server.name == "gopls" then
+        opts.on_attach = function(client, bufnr)
+            general_keybindings(bufnr)
+        end
+    end
+
     if server.name == "tsserver" then
         opts.on_attach = function(client, bufnr)
             client.resolved_capabilities.document_formatting = false

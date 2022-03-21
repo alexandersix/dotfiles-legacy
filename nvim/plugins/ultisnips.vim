@@ -38,7 +38,8 @@ telescope.setup {
             ".cache/.*",
             ".idea/.*",
             "dist/.*",
-            ".git/.*"
+            ".git/.*",
+            "public/vendor"
         },
     }
 }

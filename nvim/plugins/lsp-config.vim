@@ -85,6 +85,12 @@ lsp_installer.on_server_ready(function(server)
         end
     end
 
+    if server.name == "clangd" then
+        opts.on_attach = function(client, bufnr)
+            general_keybindings(bufnr)
+        end
+    end
+
     if server.name == "tsserver" then
         opts.on_attach = function(client, bufnr)
             client.resolved_capabilities.document_formatting = false
@@ -99,6 +105,16 @@ lsp_installer.on_server_ready(function(server)
             local ts_utils = require("nvim-lsp-ts-utils")
             ts_utils.setup({})
             ts_utils.setup_client(client)
+        end
+    end
+
+    if server.name == "svelte" then
+        opts.on_attach = function(client, bufnr)
+            general_keybindings(bufnr)
+
+            set.tabstop = 2
+            set.softtabstop = 2
+            set.shiftwidth = 2
         end
     end
     -- This setup() function will take the provided server configuration and decorate it with the necessary properties

@@ -142,10 +142,12 @@ source ~/.config/nvim/plugins/sayonara.vim
 source ~/.config/nvim/plugins/surround.vim
 source ~/.config/nvim/plugins/tmux-navigator.vim
 source ~/.config/nvim/plugins/tabnine.vim
+source ~/.config/nvim/plugins/trouble.vim
 source ~/.config/nvim/plugins/telescope-tmux.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/ultisnips.vim
+source ~/.config/nvim/plugins/vim-maximizer.vim
 source ~/.config/nvim/plugins/vim-test.vim
 source ~/.config/nvim/plugins/vimux.vim
 source ~/.config/nvim/plugins/visual-star-search.vim

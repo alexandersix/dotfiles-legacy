@@ -118,7 +118,6 @@ call plug#begin('~/.vim/plugged')
 source ~/.config/nvim/plugins/auto-pairs.vim
 source ~/.config/nvim/plugins/closetag.vim
 source ~/.config/nvim/plugins/commentary.vim
-"source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/dashboard.vim
 source ~/.config/nvim/plugins/editorconfig.vim
 source ~/.config/nvim/plugins/fugitive.vim

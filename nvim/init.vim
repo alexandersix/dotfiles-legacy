@@ -37,7 +37,7 @@ set termguicolors
 set cursorline
 set scrolloff=8
 set noshowmode
-set completeopt=menuone,noselect
+set completeopt=menu,menuone,noselect
 
 set wildmode=longest:full,full
 

@@ -30,7 +30,7 @@ local general_keybindings = function (bufnr)
     map(bufnr, 'n', '<leader>ct', '<cmd>lua vim.lsp.buf.type_definition()<CR>', options)
     map(bufnr, 'n', '<leader>ci', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
     map(bufnr, 'n', '<leader>cr', '<cmd>lua vim.lsp.buf.references()<CR>', options)
-    map(bufnr, 'n', '<leader>crn', '<cmd>lua vim.lsp.buf.rename()<CR>', options)
+    map(bufnr, 'n', '<leader>cn', '<cmd>lua vim.lsp.buf.rename()<CR>', options)
     map(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
 
     map(bufnr, 'n', '<leader>dj', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)

@@ -155,7 +155,7 @@ local source_mapping = {
 cmp.setup({
     snippet = {
         expand = function(args)
-            require('ultisnips').lsp_expand(args.body) -- For `luasnip` users.
+            vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users
         end,
     },
     mapping = {

@@ -11,6 +11,7 @@
 "---------------------------------------------------------
 " General Settings
 "---------------------------------------------------------
+syntax enable
 
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -128,9 +129,9 @@ source ~/.config/nvim/plugins/heritage.vim
 source ~/.config/nvim/plugins/lualine.vim
 source ~/.config/nvim/plugins/lsp-config.vim
 source ~/.config/nvim/plugins/markdown-preview.vim
-source ~/.config/nvim/plugins/neoclip.vim
+"source ~/.config/nvim/plugins/neoclip.vim
 source ~/.config/nvim/plugins/nerdtree.vim
-source ~/.config/nvim/plugins/nord.vim
+" source ~/.config/nvim/plugins/nord.vim
 source ~/.config/nvim/plugins/octo.vim
 source ~/.config/nvim/plugins/pasta.vim
 source ~/.config/nvim/plugins/php-cs-fixer.vim
@@ -147,15 +148,14 @@ source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/ultisnips.vim
 source ~/.config/nvim/plugins/vim-maximizer.vim
+source ~/.config/nvim/plugins/vim-blade.vim
 source ~/.config/nvim/plugins/vim-test.vim
 source ~/.config/nvim/plugins/vimux.vim
 source ~/.config/nvim/plugins/visual-star-search.vim
-source ~/.config/nvim/plugins/which-key.vim
 
 call plug#end()
 doautocmd User PlugLoaded " Necessary for plugins to setup correctly
 
-syntax enable
 colorscheme gruvbox
 
 "---------------------------------------------------------
@@ -172,6 +172,3 @@ augroup ALEXANDER_GROUP
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
-
-"" Keymap
-nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>

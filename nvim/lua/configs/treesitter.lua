@@ -7,7 +7,7 @@ function M.config()
   end
 
   local default_opts = {
-    ensure_installed = "maintained",
+    ensure_installed = { "astro", "bash", "c", "cmake", "cpp", "css", "dart", "go", "gomod", "graphql", "html", "http", "javascript", "jsdoc", "json", "php", "ruby", "scss", "solidity", "svelte", "toml", "tsx", "typescript", "vim", "vue", "yaml" },
     sync_install = false,
     ignore_install = {},
     highlight = {

@@ -68,7 +68,7 @@ function M.config()
         ["."] = "set_root",
         ["H"] = "toggle_hidden",
         ["R"] = "refresh",
-        ["/"] = "fuzzy_finder",
+        ["\\"] = "fuzzy_finder",
         ["f"] = "filter_on_submit",
         ["<c-x>"] = "clear_filter",
         ["a"] = "add",

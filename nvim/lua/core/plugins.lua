@@ -27,20 +27,20 @@ local astro_plugins = {
   { "nvim-lua/popup.nvim" },
 
   -- Boost startup time
-  -- {
-  --   "nathom/filetype.nvim",
-  --   config = function()
-  --     require("configs.filetype").config()
-  --   end,
-  -- },
+  {
+    "nathom/filetype.nvim",
+    config = function()
+      require("configs.filetype").config()
+    end,
+  },
   -- Indent detection
-  -- {
-  --   "Darazaki/indent-o-matic",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("configs.indent-o-matic").config()
-  --   end,
-  -- },
+  {
+    "Darazaki/indent-o-matic",
+    event = "BufRead",
+    config = function()
+      require("configs.indent-o-matic").config()
+    end,
+  },
 
   -- Notification Enhancer
   {
@@ -371,6 +371,9 @@ local astro_plugins = {
 
   -- Get extra JSON schemas
   { "b0o/SchemaStore.nvim" },
+
+  -- editorconfig
+  { "editorconfig/editorconfig-vim" },
 
   -- Fugitive
   { "tpope/vim-fugitive" },

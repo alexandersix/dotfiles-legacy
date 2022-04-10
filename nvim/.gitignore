@@ -1,2 +1,3 @@
-/tags
-coc-settings.json
+plugin
+lua/user/
+lua/packer_compiled.lua

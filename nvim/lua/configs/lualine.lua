@@ -65,6 +65,10 @@ function M.config()
           padding = { left = 2, right = 1 },
         },
         {
+          "filename",
+          padding = { left = 2, right = 1 },
+        },
+        {
           "diff",
           symbols = { added = " ", modified = "柳", removed = " " },
           cond = conditions.hide_in_width,

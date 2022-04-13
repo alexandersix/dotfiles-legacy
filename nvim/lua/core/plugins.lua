@@ -83,14 +83,14 @@ local astro_plugins = {
   },
 
   -- Bufferline
-  {
-    "akinsho/bufferline.nvim",
-    after = "nvim-web-devicons",
-    config = function()
-      require("configs.bufferline").config()
-    end,
-    disable = not config.enabled.bufferline,
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   after = "nvim-web-devicons",
+  --   config = function()
+  --     require("configs.bufferline").config()
+  --   end,
+  --   disable = not config.enabled.bufferline,
+  -- },
 
   -- Better buffer closing
   {
@@ -416,6 +416,14 @@ local astro_plugins = {
 
   -- Visual Star Search
   { "nelstrom/vim-visual-star-search" },
+
+  -- Glow.nvim
+  {
+    "ellisonleao/glow.nvim",
+    config = function()
+      require("configs.glow").config()
+    end
+  },
 }
 
 packer.startup {

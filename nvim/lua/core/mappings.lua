@@ -104,7 +104,7 @@ map("n", "<leader>.", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", opts)
 map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", opts)
 map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts)
-map("n", "<leader><leader>", "<cmd>Telescope find_files<CR>", opts)
+map("n", "<leader><leader>", "<cmd>Telescope find_files hidden=true<CR>", opts)
 map("n", "<leader>bl", "<cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
@@ -245,6 +245,9 @@ vim.cmd("let g:VimuxCloseOnExit = 1")
 -- Luasnip
 map("i", "<C-k>", "<cmd>lua require'luasnip'.expand_or_jump()<cr>", opts)
 map("i", "<C-j>", "<cmd>lua require'luasnip'.jump(-1)<cr>", opts)
+
+-- Glow (Markdown viewer)
+map("n", "<leader>mm", "<cmd>Glow %<cr>", opts)
 
 function _G.set_terminal_keymaps()
   vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)

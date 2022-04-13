@@ -22,6 +22,7 @@ function M.config()
       selection_strategy = "reset",
       sorting_strategy = "ascending",
       layout_strategy = "horizontal",
+      file_ignore_patterns = { "node_modules", "vendor", "public/css", "public/js" },
       layout_config = {
         horizontal = {
           prompt_position = "bottom",

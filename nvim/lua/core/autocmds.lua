@@ -32,4 +32,13 @@ vim.cmd [[
   command! AstroUpdate lua require('core.utils').update()
 ]]
 
+if utils.is_available "vim-blade" then
+  vim.cmd [[
+    augroup blade_settings
+      autocmd!
+      autocmd BufRead,BufNewFile *.blade.php set filetype=blade
+    augroup end
+  ]]
+end
+
 return M

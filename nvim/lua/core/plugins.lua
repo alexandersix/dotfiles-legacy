@@ -406,7 +406,12 @@ local astro_plugins = {
   { "szw/vim-maximizer" },
 
   -- Vim Blade
-  { "jwalton512/vim-blade" },
+  {
+    "jwalton512/vim-blade",
+    config = function()
+      require("configs.vim-blade").config()
+    end
+  },
 
   -- Vim Test
   { "vim-test/vim-test" },
@@ -416,6 +421,14 @@ local astro_plugins = {
 
   -- Visual Star Search
   { "nelstrom/vim-visual-star-search" },
+
+  -- Vimwiki
+  { 
+    "vimwiki/vimwiki",
+    config = function()
+      require("configs.vimwiki").config()
+    end
+  },
 
   -- Glow.nvim
   {

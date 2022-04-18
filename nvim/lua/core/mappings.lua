@@ -227,7 +227,7 @@ map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
 map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
 
 -- Maximizer
-map("n", "<leader>ww", "<cmd>MaximizerToggle<cr>", opts)
+map("n", "<leader>zz", "<cmd>MaximizerToggle<cr>", opts)
 
 -- Vim-Test
 map("n", "<leader>tn", "<cmd>TestNearest<cr>", opts)

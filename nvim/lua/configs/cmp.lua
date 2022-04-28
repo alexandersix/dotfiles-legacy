@@ -79,7 +79,7 @@ function M.config()
       keyword_length = 1,
     },
     sources = {
-      { name = "cmp_tabnine" },
+      -- { name = "cmp_tabnine" },
       { name = "nvim_lsp" },
       { name = "luasnip" },
       { name = "buffer" },

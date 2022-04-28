@@ -8,7 +8,7 @@ end
 local utils = require "core.utils"
 local config = utils.user_settings()
 
-local astro_plugins = {
+local plugins = {
   -- Plugin manager
   {
     "wbthomason/packer.nvim",
@@ -439,14 +439,14 @@ local astro_plugins = {
   },
 
   -- Goyo.vim
-  { "junegunn/goyo.vim" }
+  { "junegunn/goyo.vim" },
 }
 
 packer.startup {
   function(use)
     -- Load plugins!
     for _, plugin in
-      pairs(require("core.utils").user_plugin_opts("plugins.init", require("core.utils").label_plugins(astro_plugins)))
+      pairs(require("core.utils").user_plugin_opts("plugins.init", require("core.utils").label_plugins(plugins)))
     do
       use(plugin)
     end

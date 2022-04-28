@@ -28,10 +28,6 @@ if utils.is_available "dashboard-nvim" and utils.is_available "bufferline.nvim" 
   ]]
 end
 
-vim.cmd [[
-  command! AstroUpdate lua require('core.utils').update()
-]]
-
 if utils.is_available "vim-blade" then
   vim.cmd [[
     augroup blade_settings

@@ -220,6 +220,9 @@ local plugins = {
       "LspUninstall",
       "LspUninstallAll",
     },
+    config = function()
+      require("configs.nvim-lsp-installer")
+    end
   },
 
   -- Built-in LSP
@@ -421,14 +424,6 @@ local plugins = {
 
   -- Visual Star Search
   { "nelstrom/vim-visual-star-search" },
-
-  -- Vimwiki
-  { 
-    "vimwiki/vimwiki",
-    config = function()
-      require("configs.vimwiki").config()
-    end
-  },
 
   -- Glow.nvim
   {

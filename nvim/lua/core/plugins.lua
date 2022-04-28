@@ -437,6 +437,14 @@ local astro_plugins = {
       require("configs.glow").config()
     end
   },
+
+  -- Goyo.vim
+  {
+    "junegunn/goyo.vim",
+    config = function()
+      require("configs.goyo").config()
+    end
+  }
 }
 
 packer.startup {

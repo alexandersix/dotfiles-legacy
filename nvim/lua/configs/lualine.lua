@@ -45,10 +45,10 @@ function M.config()
 
   local config = {
     options = {
+      { theme = "gruvbox" },
       disabled_filetypes = { "NvimTree", "neo-tree", "dashboard", "Outline" },
       component_separators = "",
       section_separators = "",
-      { theme = "gruvbox" },
     },
     sections = {
       lualine_a = { spacer },

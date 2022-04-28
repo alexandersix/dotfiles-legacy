@@ -62,7 +62,7 @@ local function load_options(module, default)
   return default
 end
 
-M.base_notification = { title = "AstroVim" }
+M.base_notification = { title = "Neovim" }
 
 function M.bootstrap()
   local fn = vim.fn
@@ -76,7 +76,7 @@ function M.bootstrap()
       "https://github.com/wbthomason/packer.nvim",
       install_path,
     }
-    print "Cloning packer...\nSetup AstroVim"
+    print "Cloning packer...\nSetup Neovim"
     vim.cmd [[packadd packer.nvim]]
   end
 end

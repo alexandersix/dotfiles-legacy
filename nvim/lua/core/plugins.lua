@@ -385,7 +385,12 @@ local plugins = {
   { "ThePrimeagen/harpoon" },
 
   -- php-cs-fixer
-  { "stephpy/vim-php-cs-fixer" },
+  { 
+    "stephpy/vim-php-cs-fixer",
+    config = function()
+      require("configs.php-cs-fixer").config()
+    end
+  },
 
   -- Prettier
   { "prettier/vim-prettier" },

@@ -810,6 +810,9 @@ awful.spawn.with_shell("picom")
 -- awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("setxkbmap -option caps:escape")
 
+-- Set mouse speed
+awful.spawn.with_shell('id="pointer:MX Master Mouse"; speed=0.5; xinput set-prop $id "Coordinate Transformation Matrix" $speed, 0, 0, 0, $speed, 0, 0, 0, 1')
+
 -- possible workaround for tag preservation when switching back to default screen:
 -- https://github.com/lcpz/awesome-copycats/issues/251
 -- }}}

@@ -93,6 +93,7 @@ local editor       = os.getenv("EDITOR") or "vim"
 local browser      = "brave-browser"
 local file_manager = "pcmanfm"
 local notes        = "Obsidian-0.14.6.AppImage"
+local database     = "dbeaver"
 local scrlocker    = "slock systemctl suspend"
 local mute_key     = "XF86AudioMute"
 local audio_prev   = "XF86AudioPrev"
@@ -114,8 +115,8 @@ awful.layout.layouts = {
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
+    awful.layout.suit.max,
+    awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
     --awful.layout.suit.corner.ne,
@@ -251,9 +252,9 @@ awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) 
 
 -- {{{ Mouse bindings
 root.buttons(my_table.join(
-    awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end)
+    -- awful.button({ }, 4, awful.tag.viewnext),
+    -- awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
 
@@ -324,8 +325,8 @@ globalkeys = my_table.join(
             if client.focus then client.focus:raise() end
         end,
         {description = "focus right", group = "client"}),
-    awful.key({ modkey,           }, "a", function () awful.util.mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
+    -- awful.key({ modkey,           }, "a", function () awful.util.mymainmenu:show() end,
+    --           {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  -1)    end,
@@ -373,7 +374,7 @@ globalkeys = my_table.join(
               {description = "move tag to the left", group = "tag"}),
     awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end,
               {description = "move tag to the right", group = "tag"}),
-    awful.key({ modkey, "Shift" }, "d", function () lain.util.delete_tag() end,
+    awful.key({ modkey, "Shift", altkey }, "d", function () lain.util.delete_tag() end,
               {description = "delete tag", group = "tag"}),
 
     -- Standard program
@@ -498,6 +499,10 @@ globalkeys = my_table.join(
               {description = "run file manager", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "o", function () awful.spawn(notes) end,
               {description = "run notes app", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "f", function () awful.spawn.with_shell("brave-browser https://figma.com") end,
+              {description = "run figma", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "d", function () awful.spawn(database) end,
+              {description = "run database viewer", group = "launcher"}),
     --[[
     awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
               {description = "run gui editor", group = "launcher"}),
@@ -713,11 +718,14 @@ awful.rules.rules = {
             "Arandr",
             "Blueman-manager",
             "Pavucontrol",
+            "RuneLite",
             "Toggl Track",
             "zoom",
         },
         name = {
             "Event Tester", -- xev
+            "RuneLite Launcher", -- runelite loading popup
+            "RuneLite", -- runelite client
         },
         role = {
             "pop-up", -- e.g. Chrome's (detatched) devtools
@@ -811,7 +819,7 @@ awful.spawn.with_shell("picom")
 awful.spawn.with_shell("setxkbmap -option caps:escape")
 
 -- Set mouse speed
-awful.spawn.with_shell('id="pointer:MX Master Mouse"; speed=0.5; xinput set-prop $id "Coordinate Transformation Matrix" $speed, 0, 0, 0, $speed, 0, 0, 0, 1')
+awful.spawn.with_shell("mouse-movement.sh")
 
 -- possible workaround for tag preservation when switching back to default screen:
 -- https://github.com/lcpz/awesome-copycats/issues/251

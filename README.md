@@ -16,9 +16,11 @@ for each of your applications.
 
 ## Applications List
 
-- Alacritty (inactive)
+- AstroNvim configuration
+- Cheatsheet.sh
+- gh-dash
 - Kitty
-- Neovim
+- Neovim (inactive)
 - Qutebrowser
 - Smug
 - Tmux

@@ -145,14 +145,9 @@ map("n", "<C-s>", "<cmd>w!<CR>", opts)
 map("n", "<C-q>", "<cmd>q!<CR>", opts)
 
 -- Terminal
-if utils.is_available "nvim-toggleterm.lua" then
-  map("n", "<leader>tt", "<cmd>ToggleTerm<CR>", opts)
-  map("n", "<leader>tj", "<cmd>lua require('core.utils').toggle_term_cmd('node')<CR>", opts)
-  map("n", "<leader>tp", "<cmd>lua require('core.utils').toggle_term_cmd('python')<CR>", opts)
-  map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", opts)
-  map("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", opts)
-  map("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", opts)
-end
+map("n", "<leader>tt", "<cmd>ToggleTerm<CR>", opts)
+map("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", opts)
+map("n", "<leader>t\\", "<cmd>ToggleTerm size=80 direction=vertical<cr>", opts)
 
 -- SymbolsOutline
 if utils.is_available "symbols-outline.nvim" then

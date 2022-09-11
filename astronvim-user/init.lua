@@ -14,7 +14,7 @@ local config = {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
-    channel = "nightly", -- "stable" or "nightly"
+    channel = "stable", -- "stable" or "nightly"
     version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
     branch = "main", -- branch name (NIGHTLY ONLY)
     commit = nil, -- commit hash (NIGHTLY ONLY)
@@ -36,12 +36,13 @@ local config = {
       hidden = true,
       hlsearch = false,
       incsearch = true,
-      mouse = "nv",
+      mouse = "v",
       nu = true,
       relativenumber = true, -- sets vim.opt.relativenumber
       shiftwidth = 4,
       tabstop = 4,
-      wildmode = "longest:full,full"
+      wildmode = "longest:full,full",
+      smartindent = false
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -115,6 +116,39 @@ local config = {
       ["christoomey/vim-tmux-navigator"] = {},
       ["preservim/vimux"] = {},
       ["nelstrom/vim-visual-star-search"] = {},
+      ["camgraff/telescope-tmux.nvim"] = {},
+      {
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+          local catppuccin = require("catppuccin")
+          local colors = require("catppuccin.palettes").get_palette "mocha"
+          colors.none = "NONE"
+          catppuccin.setup({
+            transparent_background = true,
+            custom_highlights = {
+              Comment = { fg = colors.overlay1 },
+		          LineNr = { fg = colors.overlay1 },
+		          CursorLine = { bg = colors.none },
+		          CursorLineNr = { fg = colors.lavender },
+		          DiagnosticVirtualTextError = { bg = colors.none },
+		          DiagnosticVirtualTextWarn = { bg = colors.none },
+		          DiagnosticVirtualTextInfo = { bg = colors.none },
+		          DiagnosticVirtualTextHint = { bg = colors.none },
+            }
+          })
+        end,
+      },
+      {
+        "rose-pine/neovim",
+        as = "rose-pine",
+        tag = "v1.*",
+        config = function()
+          require('rose-pine').setup({
+            disable_background = true
+          })
+        end
+      }
 
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
@@ -123,6 +157,10 @@ local config = {
     -- All other entries override the setup() call for default plugins
     ["neo-tree"] = function()
       require "user.configs.neo-tree"
+    end,
+
+    ["telescope"] = function()
+      require "user.configs.telescope"
     end,
 
     ["notify"] = function()
@@ -175,7 +213,37 @@ local config = {
       return config -- return final config table
     end,
     treesitter = {
-      ensure_installed = { "lua" },
+      ensure_installed = { "astro", "bash", "c", "cmake", "cpp", "css", "dart", "go", "gomod", "graphql", "html", "http", "javascript", "jsdoc", "json", "php", "ruby", "scss", "solidity", "svelte", "toml", "tsx", "typescript", "vim", "vue", "yaml" },
+      sync_install = false,
+      ignore_install = {},
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
+      },
+      autopairs = {
+        enable = true,
+      },
+      incremental_selection = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+      rainbow = {
+        enable = true,
+        disable = { "html" },
+        extended_mode = false,
+        max_file_lines = nil,
+      },
+      autotag = {
+        enable = true,
+      },
+      -- require "user.configs.treesitter"
+      -- ensure_installed = { "lua" },
     },
     ["nvim-lsp-installer"] = {
       ensure_installed = { "sumneko_lua" },
@@ -291,8 +359,12 @@ local config = {
         StatusLine = {bg = "#1d2021", fg = "#ebdbb2"}
       }
     })
+    -- vim.cmd("colorscheme gruvbox")
 
-    vim.cmd("colorscheme gruvbox")
+    -- vim.g.catppuccin_flavour = "macchiato"
+    vim.cmd("colorscheme catppuccin")
+
+    -- vim.cmd("colorscheme rose-pine")
 
     -- Set up custom filetypes
     -- vim.filetype.add {

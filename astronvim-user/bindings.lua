@@ -55,7 +55,8 @@ map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
 map("n", "<leader>fs", "<cmd>w<CR>", opts)
 map("n", "<leader>fwq", "<cmd>wq<CR>", opts)
 map("n", "<leader>fqq", "<cmd>q<CR>", opts)
--- map("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
+map("n", "<leader>bd", "<cmd>Bdelete!<CR>", opts)
+map("n", "<leader>c", "Nop", opts)
 -- map("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Packer
@@ -118,6 +119,7 @@ map("n", "<leader>sc", "<cmd>Telescope commands<CR>", opts)
 map("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<CR>", opts)
 map("n", "<leader>lR", "<cmd>Telescope lsp_references<CR>", opts)
 map("n", "<leader>lD", "<cmd>Telescope diagnostics<CR>", opts)
+map("n", "<leader>tms", "<cmd>Telescope tmux sessions<CR>", opts)
 
 -- LSP
 map("n", "<leader>cD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -129,6 +131,7 @@ map("n", "<leader>cl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>", opts)
 map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>", opts)
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+map("n", "<leader>ck", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 map("n", "<leader>crn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
@@ -198,7 +201,7 @@ map("n", "<leader>f;", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", opts)
 map("n", "<leader>fh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 
 -- Fugitive
-map("n", "<leader>gg", "<cmd>Git<cr>", opts)
+-- map("n", "<leader>gg", "<cmd>Git<cr>", opts)
 map("n", "<leader>ga", "<cmd>Git add<cr>", opts)
 map("n", "<leader>gc", "<cmd>Git commit<cr>", opts)
 map("n", "<leader>gp", "<cmd>Git push<cr>", opts)

@@ -22,10 +22,10 @@ function M.config()
       selection_strategy = "reset",
       sorting_strategy = "ascending",
       layout_strategy = "horizontal",
-      file_ignore_patterns = { "node_modules", "vendor", "public/css", "public/js" },
+      file_ignore_patterns = { "node_modules", "vendor", "public/css", "public/js", ".git" },
       layout_config = {
         horizontal = {
-          prompt_position = "bottom",
+          prompt_position = "bottomu,
           preview_width = 0.55,
           results_width = 0.8,
         },

@@ -95,6 +95,7 @@ local config = {
   plugins = {
     -- Add plugins, the packer syntax without the "use"
     init = {
+      ["akinsho/bufferline.nvim"] = { disable = true },
       ["ellisonleao/glow.nvim"] = {},
       ["junegunn/goyo.vim"] = {},
       ["ellisonleao/gruvbox.nvim"] = {},
@@ -117,6 +118,7 @@ local config = {
       ["preservim/vimux"] = {},
       ["nelstrom/vim-visual-star-search"] = {},
       ["camgraff/telescope-tmux.nvim"] = {},
+      ["nvim-treesitter/nvim-treesitter-context"] = {},
       {
         "catppuccin/nvim",
         as = "catppuccin",

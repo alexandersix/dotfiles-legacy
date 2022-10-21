@@ -96,7 +96,13 @@ local config = {
 		init = {
 			["akinsho/bufferline.nvim"] = { disable = true },
 			-- ["rebelot/heirline.nvim"] = { disable = true },
-			-- ["rcarriga/nvim-notify"] = { disable = true },
+			["rcarriga/nvim-notify"] = {
+				config = function()
+					require("notify").setup({
+						background_colour = "#000000",
+					})
+				end,
+			},
 			["ellisonleao/glow.nvim"] = {},
 			["junegunn/goyo.vim"] = {},
 			["ellisonleao/gruvbox.nvim"] = {},
@@ -120,6 +126,11 @@ local config = {
 			["nelstrom/vim-visual-star-search"] = {},
 			["camgraff/telescope-tmux.nvim"] = {},
 			["nvim-treesitter/nvim-treesitter-context"] = {},
+			["ggandor/leap.nvim"] = {
+				config = function()
+					require("leap").add_default_mappings()
+				end,
+			},
 			["declancm/cinnamon.nvim"] = {
 				config = function()
 					require("cinnamon").setup()

@@ -95,7 +95,7 @@ local config = {
 		-- Add plugins, the packer syntax without the "use"
 		init = {
 			["akinsho/bufferline.nvim"] = { disable = true },
-			-- ["rebelot/heirline.nvim"] = { disable = true },
+			-- ["rebelot/heirline.nvim"] = { commit = "9b814e6" },
 			["rcarriga/nvim-notify"] = {
 				config = function()
 					require("notify").setup({
@@ -126,11 +126,6 @@ local config = {
 			["nelstrom/vim-visual-star-search"] = {},
 			["camgraff/telescope-tmux.nvim"] = {},
 			["nvim-treesitter/nvim-treesitter-context"] = {},
-			["ggandor/leap.nvim"] = {
-				config = function()
-					require("leap").add_default_mappings()
-				end,
-			},
 			["declancm/cinnamon.nvim"] = {
 				config = function()
 					require("cinnamon").setup()

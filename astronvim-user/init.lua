@@ -58,7 +58,8 @@ local config = {
 		},
 		-- Modify the highlight groups
 		highlights = function(highlights)
-			local C = require("default_theme.colors")
+			-- local C = require("default_theme.colors")
+			local C = require("catppuccin.palettes").get_palette("mocha")
 
 			highlights.Normal = { fg = C.fg, bg = C.bg }
 			return highlights
@@ -95,7 +96,6 @@ local config = {
 		-- Add plugins, the packer syntax without the "use"
 		init = {
 			["akinsho/bufferline.nvim"] = { disable = true },
-			-- ["rebelot/heirline.nvim"] = { commit = "9b814e6" },
 			["rcarriga/nvim-notify"] = {
 				config = function()
 					require("notify").setup({
@@ -105,7 +105,7 @@ local config = {
 			},
 			["ellisonleao/glow.nvim"] = {},
 			["junegunn/goyo.vim"] = {},
-			["ellisonleao/gruvbox.nvim"] = {},
+			-- ["ellisonleao/gruvbox.nvim"] = {},
 			["ThePrimeagen/harpoon"] = {},
 			["folke/trouble.nvim"] = {},
 			["tpope/vim-fugitive"] = {},
@@ -153,19 +153,6 @@ local config = {
 					})
 				end,
 			},
-			-- {
-			-- 	"rose-pine/neovim",
-			-- 	as = "rose-pine",
-			-- 	tag = "v1.*",
-			-- 	config = function()
-			-- 		require("rose-pine").setup({
-			-- 			disable_background = true,
-			-- 		})
-			-- 	end,
-			-- },
-
-			-- You can disable default plugins as follows:
-			-- ["goolord/alpha-nvim"] = { disable = true },
 		},
 		-- All other entries override the setup() call for default plugins
 		["neo-tree"] = function()
@@ -357,33 +344,20 @@ local config = {
 		-- Set custom vim options
 
 		-- Set colorscheme after ensuring the gruvbox setup function has run
-		local _, gruvbox = pcall(require, "gruvbox")
+		-- local _, gruvbox = pcall(require, "gruvbox")
 
-		gruvbox.setup({
-			overrides = {
-				StatusLine = { bg = "#1d2021", fg = "#ebdbb2" },
-			},
-		})
+		-- gruvbox.setup({
+		-- 	overrides = {
+		-- 		StatusLine = { bg = "#1d2021", fg = "#ebdbb2" },
+		-- 	},
+		-- })
+		--
 		-- vim.cmd("colorscheme gruvbox")
-
-		-- vim.g.catppuccin_flavour = "macchiato"
-		vim.cmd("colorscheme catppuccin")
-
-		-- vim.cmd("colorscheme rose-pine")
-
-		-- Set up custom filetypes
-		-- vim.filetype.add {
-		--   extension = {
-		--     foo = "fooscript",
-		--   },
-		--   filename = {
-		--     ["Foofile"] = "fooscript",
-		--   },
-		--   pattern = {
-		--     ["~/%.config/foo/.*"] = "fooscript",
-		--   },
-		-- }
+		vim.cmd(":highlight TabLineSel None")
 	end,
+
+	colorscheme = "catppuccin",
+
 }
 
 return config

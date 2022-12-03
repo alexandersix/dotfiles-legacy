@@ -121,10 +121,10 @@ alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
 # move window
-shift + alt - h : yabai -m window --swap west
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - l : yabai -m window --swap east
+shift + ctrl - h : yabai -m window --swap west
+shift + ctrl - j : yabai -m window --swap south
+shift + ctrl - k : yabai -m window --swap north
+shift + ctrl - l : yabai -m window --swap east
 
 # full-screen window
 shift + alt - z : yabai -m window --toggle zoom-parent
@@ -152,10 +152,10 @@ shift + alt - 5 : yabai -m window --space 5 && yabai -m space --focus 5
 shift + alt - 6 : yabai -m window --space 6 && yabai -m space --focus 6
 
 # increase window size
-ctrl + alt - h : yabai -m window west --resize right:-75:0 2> /dev/null || yabai -m window --resize right:-75:0
-ctrl + alt - j : yabai -m window north --resize bottom:0:75 2> /dev/null || yabai -m window --resize bottom:0:75
-ctrl + alt - k : yabai -m window south --resize top:0:-75 2> /dev/null || yabai -m window --resize top:0:-75
-ctrl + alt - l : yabai -m window east --resize left:75:0 2> /dev/null || yabai -m window --resize left:75:0
+shift + alt - h : yabai -m window west --resize right:-75:0 2> /dev/null || yabai -m window --resize right:-75:0
+shift + alt - j : yabai -m window north --resize bottom:0:75 2> /dev/null || yabai -m window --resize bottom:0:75
+shift + alt - k : yabai -m window south --resize top:0:-75 2> /dev/null || yabai -m window --resize top:0:-75
+shift + alt - l : yabai -m window east --resize left:75:0 2> /dev/null || yabai -m window --resize left:75:0
 
 # spaces
 ctrl + alt - h : yabai -m space --focus prev

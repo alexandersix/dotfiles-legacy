@@ -103,6 +103,7 @@ local config = {
 					})
 				end,
 			},
+			["github/copilot.vim"] = {},
 			["ellisonleao/glow.nvim"] = {},
 			["junegunn/goyo.vim"] = {},
 			-- ["ellisonleao/gruvbox.nvim"] = {},
